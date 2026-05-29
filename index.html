@@ -147,9 +147,9 @@
 
   /* Ebook Cover Mockup */
   .hero-mockup {
-    position: absolute; right: 7vw; top: 30%; transform: translateY(-50%);
+    position: absolute; right: 7vw; top: 25%; transform: translateY(-50%);
     z-index: 1; animation: fadeUp 0.8s 0.35s ease both;
-    width: 260px;
+    width: 300px;
   }
   .mockup-card {
     background: linear-gradient(145deg, var(--navy-light) 0%, var(--navy-card) 100%);
@@ -602,21 +602,92 @@
   footer p { font-size: 0.68rem; color: var(--muted); }
 
   /* ═══════════════════════════════════════
-     RESPONSIVE
+     RESPONSIVE (OTIMIZADO PARA MOBILE)
   ═══════════════════════════════════════ */
   @media (max-width: 640px) {
-    nav { padding: 0.9rem 4vw; }
-    .hero { padding: 6.5rem 4vw 4rem; }
+    /* Navegação - Evita sobreposição do texto longo do logo com o botão */
+    nav { 
+      flex-direction: column; 
+      gap: 0.8rem; 
+      padding: 1rem 4vw; 
+      text-align: center; 
+    }
+    .nav-cta { 
+      width: 100%; 
+      text-align: center; 
+      padding: 0.6rem 1.1rem;
+    }
+
+    /* Hero - Centralização e botões ocupando 100% da largura */
+    .hero { 
+      padding: 8.5rem 4vw 4rem; 
+      text-align: center; 
+      align-items: center; 
+    }
+    .hero-badge { 
+      margin: 0 auto 1.5rem auto; 
+    }
+    .hero h1 { 
+      font-size: 2.3rem; /* Ajuste fino para evitar quebras estranhas */
+    }
+    .hero-sub { 
+      margin-left: auto; 
+      margin-right: auto; 
+    }
+    .hero-actions { 
+      flex-direction: column; 
+      width: 100%; 
+      gap: 0.8rem; 
+    }
+    .btn-primary, .btn-ghost { 
+      width: 100%; 
+      text-align: center; 
+      padding: 1.1rem 2.1rem; /* Aumenta a área de toque */
+    }
+
+    /* Seções Gerais e Grid */
     section { padding: 4rem 4vw; }
-    .stats-bar { padding: 2rem 4vw; }
+    .stats-bar { 
+      grid-template-columns: 1fr 1fr; 
+      gap: 1.5rem; 
+      padding: 2rem 4vw; 
+    }
     .context-band { padding: 3rem 4vw; }
-    .audience { flex-direction: column; gap: 2.5rem; }
-    .form-section { flex-direction: column; gap: 2.5rem; }
-    .ebook-preview { max-width: 100%; }
-    .team-inner { flex-direction: column; gap: 2.5rem; }
+    .audience, .form-section { flex-direction: column; gap: 2.5rem; }
     .learn-grid { grid-template-columns: 1fr; }
+    
+    /* Capítulos - Reduzindo o recuo para ganhar espaço de leitura */
+    .chapter-row { 
+      gap: 1rem; 
+      padding: 1.2rem 0; 
+    }
+    .ch-num { 
+      font-size: 1rem; 
+      min-width: 20px; 
+    }
+
+    /* Formulário de Captura - Correções de UX e iOS */
+    .ebook-preview { max-width: 100%; }
+    .form-card { 
+      padding: 1.8rem 1.2rem; /* Menos margem interna, campo maior */
+    }
+    .field input, .field select {
+      font-size: 16px !important; /* CRÍTICO: Evita auto-zoom ao focar no campo no iOS */
+      padding: 0.85rem 1rem; 
+    }
+    .form-submit { 
+      padding: 1.2rem; 
+      font-size: 0.9rem; 
+    }
+
+    /* CTA Final e Footer */
     .final-cta { padding: 3rem 4vw; }
-    footer { flex-direction: column; align-items: flex-start; }
+    footer { 
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center; 
+      gap: 1.2rem;
+    }
   }
 </style>
 </head>
