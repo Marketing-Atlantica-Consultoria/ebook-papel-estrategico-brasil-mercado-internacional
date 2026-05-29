@@ -394,7 +394,7 @@
   .chapter-row:hover { background: rgba(201,146,42,0.025); }
   .ch-num {
     font-family: 'Playfair Display', serif;
-    font-size: 1.15rem; font-weight: 700; color: var(--gold);
+    font-size: 1.25rem; font-weight: 700; color: var(--gold);
     min-width: 28px; line-height: 1.4; flex-shrink: 0;
     padding-top: 0.1rem;
   }
@@ -605,17 +605,32 @@
      RESPONSIVE (OTIMIZADO PARA MOBILE)
   ═══════════════════════════════════════ */
   @media (max-width: 640px) {
-    /* Navegação - Evita sobreposição do texto longo do logo com o botão */
+    /* Navegação - Estrutura centralizada e compacta */
     nav { 
       flex-direction: column; 
-      gap: 0.8rem; 
-      padding: 1rem 4vw; 
-      text-align: center; 
+      gap: 0.6rem; 
+      padding: 0.8rem 4vw; 
+      align-items: center; 
+      justify-content: center;
     }
-    .nav-cta { 
-      width: 100%; 
+
+    /* Logo - Empilha "Atlântica Consultoria" e "Internacional" */
+    .logo { 
+      flex-direction: column; /* Coloca o <span> na linha de baixo */
+      gap: 0.1rem; 
+      font-size: 0.9rem; 
       text-align: center; 
-      padding: 0.6rem 1.1rem;
+      line-height: 1.2;
+    }
+
+    /* CTA Topo - Caixa mais elegante, com fundo translúcido para destacar */
+    .nav-cta { 
+      width: auto; /* Remove a largura total para ficar mais delicado no topo */
+      padding: 0.5rem 1.4rem; 
+      font-size: 0.65rem;
+      border: 1px solid var(--gold); /* Borda um pouco mais demarcada para mobile */
+      background: rgba(201,146,42,0.08); /* Preenchimento sutil para parecer um botão clicável */
+      border-radius: 4px; /* Bordas levemente mais arredondadas */
     }
 
     /* Hero - Centralização e botões ocupando 100% da largura */
