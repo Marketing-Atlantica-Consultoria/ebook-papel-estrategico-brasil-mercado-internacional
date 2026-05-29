@@ -394,9 +394,17 @@
   .chapter-row:hover { background: rgba(201,146,42,0.025); }
   .ch-num {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem; font-weight: 700; color: var(--gold);
-    min-width: 28px; line-height: 1.4; flex-shrink: 0;
+    font-size: 2rem; 
+    font-weight: 700; 
+    color: var(--gold);
+    min-width: 45px; 
+    line-height: 1; 
+    flex-shrink: 0;
     padding-top: 0.1rem;
+    
+    /* Novas propriedades para manter uniformidade: */
+    display: flex;
+    justify-content: center; /* Centraliza o número perfeitamente no meio da largura de 45px */
   }
   .ch-bar {
     width: 1.5px; background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
@@ -961,7 +969,7 @@
       <div class="ch-bar"></div>
       <div class="ch-content">
         <h3>Introdução</h3>
-        <p>Contextualização do comércio internacional como pilar das relações políticas contemporâneas e da trajetória do Brasil — de uma economia agroexportadora dependente a um ator de projeção global.</p>
+        <p>Contextualização do comércio internacional como pilar das relações políticas contemporâneas e da trajetória do Brasil — de uma economia dependente a um ator de projeção global.</p>
 
       </div>
     </div>
